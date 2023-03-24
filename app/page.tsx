@@ -1,13 +1,12 @@
 import { Inter } from 'next/font/google'
+import Images from '../components/Images'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </main>
+    <div className="mx-0 md:10">
+      <Images />
+    </div>
   )
 }

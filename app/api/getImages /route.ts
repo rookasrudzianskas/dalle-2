@@ -6,8 +6,8 @@ export async function GET(request: Request) {
     }
   );
 
-  const blob = await response.blob();
-  const textData = await blob.text();
+  const blog = await response.json();
+  const textData = await response.text();
 
   const data = JSON.parse(textData);
 
