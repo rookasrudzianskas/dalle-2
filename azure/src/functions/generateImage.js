@@ -20,7 +20,7 @@ app.http("generateImage", {
     const response = await openai.createImage({
       prompt: prompt,
       n: 1,
-      size: "1024x1024",
+      size: "1024x1024"
     });
     image_url = response.data.data[0].url;
 
