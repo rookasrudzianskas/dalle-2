@@ -19,7 +19,7 @@ const PromptInput = ({}) => {
               : "text-gray-300 cursor-not-allowed"
           } font-bold`}
           type="submit"
-          // disabled={!input}
+          disabled={!input}
         >
           Generate
         </button>
