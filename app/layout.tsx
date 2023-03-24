@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Header from "../components/Header";
+import PromptInput from "../components/PromptInput";
 
 export const metadata = {
   title: 'Dalle-2',
@@ -15,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        {/* Prompt Input*/}
+        <PromptInput />
         {/* Page Section */}
         {children}
       </body>
