@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import Header from "../components/Header";
 
 export const metadata = {
   title: 'Dalle-2',
@@ -12,7 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {/* Prompt Input*/}
+        {/* Page Section */}
+        {children}
+      </body>
     </html>
   )
 }
