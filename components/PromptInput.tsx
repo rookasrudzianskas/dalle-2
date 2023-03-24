@@ -1,8 +1,10 @@
 "use client";
 
-import React, {useState} from 'react';
+import React, {FormEvent, useState} from 'react';
 import fetchSuggestionFromChatGPT from "../lib/fetchSuggestionFromChatGPT";
 import useSWR from "swr";
+import fetchImages from "../lib/fetchImages";
+import toast from "react-hot-toast";
 
 const PromptInput = ({}) => {
   const [input, setInput] = useState("");
@@ -15,6 +17,57 @@ const PromptInput = ({}) => {
   } = useSWR("suggestion", fetchSuggestionFromChatGPT, {
     revalidateOnFocus: false,
   });
+
+  const { mutate: updateImages } = useSWR("images", fetchImages, {
+    revalidateOnFocus: false,
+  });
+
+  const submitPrompt = async (useSuggestion?: boolean) => {
+    const inputPrompt = input;
+    console.log(inputPrompt);
+    setInput("");
+
+    const notificationPrompt = inputPrompt || suggestion;
+    const notificationPromptShort = notificationPrompt.slice(0, 20);
+
+    const notification = toast.loading(
+      `DALL·E is creating: ${notificationPromptShort}...`
+    );
+
+    const p = useSuggestion
+      ? suggestion
+      : inputPrompt || (!isLoading && !isValidating && suggestion);
+
+    const res = await fetch("/api/generateImage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        prompt: p,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (data.error) {
+      toast.error(data.error);
+    } else {
+      toast.success(`Your AI Art has been Generated!`, {
+        id: notification,
+      });
+    }
+
+    updateImages();
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    await submitPrompt();
+  };
+
+  const loading = isValidating || isLoading;
 
   return (
     <div className="m-10">
@@ -49,6 +102,14 @@ const PromptInput = ({}) => {
         >
           New Suggestion
         </button>
+        {input && (
+          <p className="italic pt-2 pl-2 font-light">
+            Suggestion:{" "}
+            <span className="text-violet-500">
+            {loading ? "ChatGPT is thinking..." : suggestion}
+          </span>
+          </p>
+        )}
       </form>
     </div>
   );
