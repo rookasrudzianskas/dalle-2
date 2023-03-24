@@ -1,0 +1,42 @@
+[
+  {
+    "name": "FUNCTIONS_EXTENSION_VERSION",
+    "slotSetting": false,
+    "value": "~4"
+  },
+  {
+    "name": "AzureWebJobsDashboard",
+    "slotSetting": false,
+    "value": "DefaultEndpointsProtocol=https;AccountName=0197e3aaafb5419caa01;AccountKey=Oxx+2Z8tTQXD0aVelAQU7nPQoakQcuTlRjZbMOO+WVVhqOZ/tL3ewySrtSWgRVOaplyofEhM2LJh+AStIhAmog==;EndpointSuffix=core.windows.net"
+  },
+  {
+    "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+    "slotSetting": false,
+    "value": "31ca9920-cd96-4f25-a72f-88a11a20cdb1"
+  },
+  {
+    "name": "FUNCTIONS_WORKER_RUNTIME",
+    "slotSetting": false,
+    "value": "java"
+  },
+  {
+    "name": "AzureWebJobsStorage",
+    "slotSetting": false,
+    "value": "DefaultEndpointsProtocol=https;AccountName=0197e3aaafb5419caa01;AccountKey=Oxx+2Z8tTQXD0aVelAQU7nPQoakQcuTlRjZbMOO+WVVhqOZ/tL3ewySrtSWgRVOaplyofEhM2LJh+AStIhAmog==;EndpointSuffix=core.windows.net"
+  },
+  {
+    "name": "WEBSITE_CONTENTSHARE",
+    "slotSetting": false,
+    "value": "app-dalle-generatorb69493684a"
+  },
+  {
+    "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+    "slotSetting": false,
+    "value": "DefaultEndpointsProtocol=https;AccountName=0197e3aaafb5419caa01;AccountKey=Oxx+2Z8tTQXD0aVelAQU7nPQoakQcuTlRjZbMOO+WVVhqOZ/tL3ewySrtSWgRVOaplyofEhM2LJh+AStIhAmog==;EndpointSuffix=core.windows.net"
+  },
+  {
+    "name": "WEBSITE_HTTPLOGGING_RETENTION_DAYS",
+    "slotSetting": false,
+    "value": "0"
+  }
+]
