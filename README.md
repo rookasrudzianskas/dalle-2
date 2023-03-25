@@ -15,3 +15,5 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 Or you can check the live version in here: [https://rookas-dalle-2.vercel.app/](https://rookas-dalle-2.vercel.app/)
+
+Made by Rokas with ❤️
